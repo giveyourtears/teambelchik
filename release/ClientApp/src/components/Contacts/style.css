@@ -1,0 +1,14 @@
+p > i {
+    font-size: 36px;
+}
+
+p {
+    font-size: 20px;
+}
+
+p > a {
+    font-size: 20px;
+}
+.l-text2 {
+    color:black;
+}

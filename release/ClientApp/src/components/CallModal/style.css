@@ -1,0 +1,47 @@
+.pulse {
+    background: #ff8b23;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+    position: fixed;
+    right: 1%;
+    bottom: 1%;
+    transform: translate(-50%, -50%);
+}
+
+.pulse:before,
+.pulse:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    border: 50%;
+    border: 1px solid #ff8b23;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate
+{
+0%
+{
+    transform: scale(0.5);
+    opacity: 0;
+}
+50%
+{
+    opacity: 1;
+}
+100%
+{
+    transform: scale(1.2);
+    opacity: 0;
+}
+}
