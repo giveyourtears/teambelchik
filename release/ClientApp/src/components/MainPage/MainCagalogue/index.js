@@ -78,6 +78,18 @@ class MainCatalogue extends Component {
 							<li class="p-t-4 ml-3" onClick={() => this.onClickCat("balkonnaya")}>
 								<button>Балконная группа</button>
 							</li>
+							<li class="p-t-4 ml-3" onClick={() => this.onClickCat("setka")}>
+								<button>Сетка</button>
+							</li>
+							<li class="p-t-4 ml-3" onClick={() => this.onClickCat("verhn_otliv")}>
+								<button>Верхний отлив</button>
+							</li>
+							<li class="p-t-4 ml-3" onClick={() => this.onClickCat("nizn_otliv")}>
+								<button>Нижний отлив</button>
+							</li>
+							<li class="p-t-4 ml-3" onClick={() => this.onClickCat("podokonniki")}>
+								<button>Подоконники</button>
+							</li>
 						</ul>
 					</div>
 					<div class="leftbar p-r-20 p-r-0-sm">
