@@ -6,7 +6,9 @@ import Background3 from '../../../assets/3.jpg';
 import Background4 from '../../../assets/4.jpg';
 import Background5 from '../../../assets/5.jpg';
 import Background6 from '../../../assets/6.jpg';
-var divStyle1 = {
+import Background7 from '../../../assets/7.jpg';
+import Background8 from '../../../assets/8.jpg';
+  var divStyle1 = {
     backgroundImage: `url(${Background1})`
   };
   var divStyle2 = {
@@ -24,6 +26,12 @@ var divStyle1 = {
   var divStyle6 = {
     backgroundImage: `url(${Background6})`
   };
+  var divStyle7 = {
+    backgroundImage: `url(${Background7})`
+  };
+  var divStyle8 = {
+    backgroundImage: `url(${Background8})`
+  };
 
 const MainSlider = () => {
     return (
@@ -35,6 +43,8 @@ const MainSlider = () => {
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
       </ol>
       <div className="carousel-inner" role="listbox">
         <div className="carousel-item active" style={divStyle1}>
@@ -46,6 +56,10 @@ const MainSlider = () => {
         <div className="carousel-item" style={divStyle5}>
         </div>
         <div className="carousel-item" style={divStyle6}>
+        </div>
+        <div className="carousel-item" style={divStyle7}>
+        </div>
+        <div className="carousel-item" style={divStyle8}>
         </div>
       </div>
       <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

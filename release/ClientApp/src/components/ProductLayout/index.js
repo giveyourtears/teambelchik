@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { createBrowserHistory } from "history";
 import { Service } from "../../services/Services";
+import './style.css';
 import image from "../../assets/325.gif"
 import image2 from "../../assets/335.jpg"
 

@@ -18,9 +18,13 @@ export const Service = {
     updateCategory,
     addCallback
 }
+
+let now_date = Date.now();
+
 function addProduct(product) {
   return fetch("https://teambelchik.by/api/product/addproduct", 
-  {method: 'PUT', 
+  {method: 'PUT',
+  cache: 'no-store',
   body: product}).then(
     handleResponse
   );
@@ -33,6 +37,7 @@ function addCategory(category) {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
+    cache: 'no-store',
     body: JSON.stringify(category)}).then(
       handleResponse
   );
@@ -45,6 +50,7 @@ function addCallback(callback) {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
+    cache: 'no-store',
     body: JSON.stringify(callback)}).then(
       handleResponse
   );
@@ -52,18 +58,18 @@ function addCallback(callback) {
 
 function getCategory(pathName) {
   return fetch(
-    "https://teambelchik.by/api/product/getCategory?cat=" + pathName
+    "https://teambelchik.by/api/product/getCategory?cat=" + pathName, {cache: 'no-store'}
   ).then(handleResponse);
 }
 
 function getAllCategory() {
   return fetch(
-    "https://teambelchik.by/api/product/getallcategory"
+    "https://teambelchik.by/api/product/getallcategory", {cache: 'no-store'}
   ).then(handleResponse);
 }
 
 function getAbout() {
-    return fetch("https://teambelchik.by/api/about/about").then(
+    return fetch("https://teambelchik.by/api/about/about", {cache: 'no-store'}).then(
         handleResponse
     );
 }
@@ -76,13 +82,14 @@ function updateAbout(about) {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
+    cache: 'no-store',
     body: JSON.stringify(about)}).then(
       handleResponse
     );
 }
 
 function getContacts() {
-    return fetch("https://teambelchik.by/api/contacts/contacts").then(
+    return fetch("https://teambelchik.by/api/contacts/contacts", {cache: 'no-store'}).then(
         handleResponse
     );
 }
@@ -95,6 +102,7 @@ function updateContacts(contacts) {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
+    cache: 'no-store',
     body: JSON.stringify(contacts)}).then(
       handleResponse
     );
@@ -107,6 +115,7 @@ function Login(login, password) {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
   },
+  cache: 'no-store',
   body: JSON.stringify({login: login, password: password})}).then(
     handleResponse
   );
@@ -114,31 +123,33 @@ function Login(login, password) {
 
 function getProductsByCategory(pathName) {
   return fetch(
-    "https://teambelchik.by/api/product/getProductsByCategory?type_cat=" + pathName
+    `https://teambelchik.by/api/product/getProductsByCategory?type_cat=${pathName}&date=${now_date}`, {cache: 'no-store'}
   ).then(handleResponse);
 }
 
+
 function getProductsBySubCategory(pathName) {
-  return fetch("https://teambelchik.by/api/product/getProductsBySubCategory?type=" + pathName
+  return fetch(`https://teambelchik.by/api/product/getProductsBySubCategory?type=${pathName}&date=${now_date}`, {cache: 'no-store'}
   ).then(handleResponse);
 }
 
 function getProducts() {
-  return fetch("https://teambelchik.by/api/product/getallproducts").then(
+  return fetch(`https://teambelchik.by/api/product/getallproducts?date=${now_date}`, {cache: 'no-store'}).then(
     handleResponse
   );
 }
 
 function getProduct(pathName) {
     return fetch(
-      "https://teambelchik.by/api/product/getproduct?product=" + pathName
+      "https://teambelchik.by/api/product/getproduct?product=" + pathName, {cache: 'no-store'}
     ).then(handleResponse);
 }
 
 function updateProduct(product) {
   return fetch("https://teambelchik.by/api/product/updateproduct",
   {
-  method: 'POST', 
+  method: 'POST',
+  cache: 'no-store', 
   body: product}).then(
     handleResponse
   );
@@ -152,6 +163,7 @@ function updateCategory(category) {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
   },
+  cache: 'no-store',
   body: JSON.stringify(category)}).then(
     handleResponse
   );

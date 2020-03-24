@@ -60,9 +60,9 @@ const Header = () => {
                                                 <div className="dropdown-divider"></div>
                                                 <a className="dropdown-item" href="/category/okna">Окна</a>
                                                 <a className="dropdown-item" href="/category/furnitura">Фурнитура</a>
-                                                {/*<a className="dropdown-item" href="/category/oboi">3D обои</a>
+                                                {/*<a className="dropdown-item" href="/category/oboi">Жидкие обои</a>
                                                 <a className="dropdown-item" href="/category/potolki">Натяжные потолки</a>
-    <a className="dropdown-item" href="/category/napol">Напольные покрытия</a>*/}
+                                                <a className="dropdown-item" href="/category/napol">Напольные покрытия</a>*/}
                                             </div>
                                         </li>
                                         <li className="nav-item">

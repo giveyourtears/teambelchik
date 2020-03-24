@@ -14,6 +14,9 @@
     />
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <meta name="yandex-verification" content="b35ed3e455dabf56" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta name="google-site-verification" content="TKX_pOy2xIBzJRFjAERH7c-3Sa9vZPVPLS7pxJ6PW_Y" />
     <meta name="description" content="Каталог нашего сайта - это широчайший выбор мебели для дома. Стальные и межкомнатные двери по доступным ценам. Весь спектр моделей и бесплатная доставка. Бесплатный замер, консультация, самая недорогая установка по Витебску. Выбирайте нашу продукцию на официальном сайте компании">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -25,39 +28,35 @@
     <div id="root"></div>
   </body>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154541481-1">
-</script>
-<script>
- $(function(){
-  $(document).keypress(function(e) {
-    cwrite(e.which,'Keypress event');
-    if(e.which==120) custom_dialog_toggle('Keypress x','You opened this window by pressing x');
-  });
-});
-function custom_dialog_toggle(title,text,buttons) {
-  if(typeof title !=='undefined') $('#dlg-header').html(title);
-  if(typeof text !=='undefined') $('#dlg-content').html(text);
-  cwrite('Current state: '+$('#dialog_state').prop("checked"),'custom_dialog_toggle');
-  $('#dialog_state').prop("checked", !$('#dialog_state').prop("checked"));
-}
-// Console logging function for debugging
-// cwrite(str, title)
-//      str:              string to be appended to console
-//      title (optional): title of the string
-// (c)  Tuomas Hatakka 2015
-//      http://tuomashatakka.fi
-function cwrite(str,title) {
-  var ce = $('#console');
-  var sg = "<p>";
-  if(typeof title !=='undefined') sg = sg+"<em>"+title+"</em> ";
-  sg = sg+str+"</p>";
-  ce.prepend(sg);
-  //if(ce.children("p").length>6) ce.children("p").first().remove();
-}
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-154541481-1');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154541481-1"></script>
+  <script>
+      function custom_dialog_toggle(e, t, o) {
+          void 0 !== e && $("#dlg-header").html(e), void 0 !== t && $("#dlg-content").html(t), cwrite("Current state: " + $("#dialog_state").prop("checked"), "custom_dialog_toggle"), $("#dialog_state").prop("checked", !$("#dialog_state").prop("checked"))
+      }
+  
+      function cwrite(e, t) {
+          var o = "<p>";
+          void 0 !== t && (o = o + "<em>" + t + "</em> "), o = o + e + "</p>", $("#console").prepend(o)
+      }
+  
+      function gtag() {
+          dataLayer.push(arguments)
+      }
+      $(function() {
+          $(document).keypress(function(e) {
+              cwrite(e.which, "Keypress event"), 120 == e.which && custom_dialog_toggle("Keypress x", "You opened this window by pressing x")
+          })
+      }), window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-154541481-1")
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-686329999"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+  
+      gtag('config', 'AW-686329999');
+  </script>
 </html>
