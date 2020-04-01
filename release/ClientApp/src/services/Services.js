@@ -6,6 +6,7 @@ export const Service = {
     getProduct,
     getProductsByCategory,
     getProductsBySubCategory,
+    getProductsBySubSubCategory,
     updateProduct,
     deleteProduct,
     getCategory,
@@ -16,13 +17,15 @@ export const Service = {
     addCategory,
     deleteCategory,
     updateCategory,
-    addCallback
+    addCallback, 
+    getAllCallbacks,
+    deleteCallback
 }
 
 let now_date = Date.now();
 
 function addProduct(product) {
-  return fetch("https://teambelchik.by/api/product/addproduct", 
+  return fetch("https://localhost:5001/api/product/addproduct", 
   {method: 'PUT',
   cache: 'no-store',
   body: product}).then(
@@ -31,7 +34,7 @@ function addProduct(product) {
 }
 
 function addCategory(category) {
-  return fetch("https://teambelchik.by/api/product/addcategory", 
+  return fetch("https://localhost:5001/api/product/addcategory", 
   { method: 'PUT', 
     headers: {
       'Accept': 'application/json',
@@ -44,7 +47,7 @@ function addCategory(category) {
 }
 
 function addCallback(callback) {
-  return fetch("https://teambelchik.by/api/callback/addcallback", 
+  return fetch("https://localhost:5001/api/callback/addcallback", 
   { method: 'PUT', 
     headers: {
       'Accept': 'application/json',
@@ -58,24 +61,30 @@ function addCallback(callback) {
 
 function getCategory(pathName) {
   return fetch(
-    "https://teambelchik.by/api/product/getCategory?cat=" + pathName, {cache: 'no-store'}
+    "https://localhost:5001/api/product/getCategory?cat=" + pathName, {cache: 'no-store'}
   ).then(handleResponse);
 }
 
 function getAllCategory() {
   return fetch(
-    "https://teambelchik.by/api/product/getallcategory", {cache: 'no-store'}
+    "https://localhost:5001/api/product/getallcategory", {cache: 'no-store'}
   ).then(handleResponse);
 }
 
 function getAbout() {
-    return fetch("https://teambelchik.by/api/about/about", {cache: 'no-store'}).then(
+    return fetch("https://localhost:5001/api/about/about", {cache: 'no-store'}).then(
         handleResponse
     );
 }
 
+function getAllCallbacks() {
+  return fetch("https://localhost:5001/api/callback/getcallbacks", {cache: 'no-store'}).then(
+      handleResponse
+  );
+}
+
 function updateAbout(about) {
-    return fetch("https://teambelchik.by/api/about/updateabout", 
+    return fetch("https://localhost:5001/api/about/updateabout", 
     {
     method: 'POST', 
     headers: {
@@ -89,13 +98,13 @@ function updateAbout(about) {
 }
 
 function getContacts() {
-    return fetch("https://teambelchik.by/api/contacts/contacts", {cache: 'no-store'}).then(
+    return fetch("https://localhost:5001/api/contacts/contacts", {cache: 'no-store'}).then(
         handleResponse
     );
 }
 
 function updateContacts(contacts) {
-    return fetch("https://teambelchik.by/api/contacts/updatecontacts", 
+    return fetch("https://localhost:5001/api/contacts/updatecontacts", 
     {
     method: 'POST', 
     headers: {
@@ -109,7 +118,7 @@ function updateContacts(contacts) {
 }
 
 function Login(login, password) {
-  return fetch("https://teambelchik.by/api/product/login", 
+  return fetch("https://localhost:5001/api/product/login", 
   {method: 'POST', 
   headers: {
     'Accept': 'application/json',
@@ -123,30 +132,35 @@ function Login(login, password) {
 
 function getProductsByCategory(pathName) {
   return fetch(
-    `https://teambelchik.by/api/product/getProductsByCategory?type_cat=${pathName}&date=${now_date}`, {cache: 'no-store'}
+    `https://localhost:5001/api/product/getProductsByCategory?category=${pathName}&date=${now_date}`, {cache: 'no-store'}
   ).then(handleResponse);
 }
 
 
 function getProductsBySubCategory(pathName) {
-  return fetch(`https://teambelchik.by/api/product/getProductsBySubCategory?type=${pathName}&date=${now_date}`, {cache: 'no-store'}
+  return fetch(`https://localhost:5001/api/product/getProductsBySubCategory?sub_category=${pathName}&date=${now_date}`, {cache: 'no-store'}
+  ).then(handleResponse);
+}
+
+function getProductsBySubSubCategory(pathName) {
+  return fetch(`https://localhost:5001/api/product/getProductsBySubSubCategory?sub_sub_cat=${pathName}&date=${now_date}`, {cache: 'no-store'}
   ).then(handleResponse);
 }
 
 function getProducts() {
-  return fetch(`https://teambelchik.by/api/product/getallproducts?date=${now_date}`, {cache: 'no-store'}).then(
+  return fetch(`https://localhost:5001/api/product/getallproducts?date=${now_date}`, {cache: 'no-store'}).then(
     handleResponse
   );
 }
 
 function getProduct(pathName) {
     return fetch(
-      "https://teambelchik.by/api/product/getproduct?product=" + pathName, {cache: 'no-store'}
+      "https://localhost:5001/api/product/getproduct?product=" + pathName, {cache: 'no-store'}
     ).then(handleResponse);
 }
 
 function updateProduct(product) {
-  return fetch("https://teambelchik.by/api/product/updateproduct",
+  return fetch("https://localhost:5001/api/product/updateproduct",
   {
   method: 'POST',
   cache: 'no-store', 
@@ -156,7 +170,7 @@ function updateProduct(product) {
 }
 
 function updateCategory(category) {
-  return fetch("https://teambelchik.by/api/product/updatecategory", 
+  return fetch("https://localhost:5001/api/product/updatecategory", 
   {
   method: 'POST', 
   headers: {
@@ -170,13 +184,19 @@ function updateCategory(category) {
 }
 
 function deleteProduct(id) {
-    return fetch("https://teambelchik.by/api/product/deleteproduct?id=" + id, {method: 'DELETE'}).then(
+    return fetch("https://localhost:5001/api/product/deleteproduct?id=" + id, {method: 'DELETE'}).then(
       handleResponse
     );
 }
 
 function deleteCategory(id) {
-  return fetch("https://teambelchik.by/api/product/deletecategory?id=" + id, {method: 'DELETE'}).then(
+  return fetch("https://localhost:5001/api/product/deletecategory?id=" + id, {method: 'DELETE'}).then(
+    handleResponse
+  );
+}
+
+function deleteCallback(id) {
+  return fetch("https://localhost:5001/api/product/deletecallback?id=" + id, {method: 'DELETE'}).then(
     handleResponse
   );
 }

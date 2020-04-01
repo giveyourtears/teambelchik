@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace release.Models
+﻿namespace release.Models
 {
   public class ProductCategory : CommonModel
   {

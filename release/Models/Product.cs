@@ -1,8 +1,4 @@
-﻿
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace release.Models
+﻿namespace release.Models
 {
   public class Product : CommonModel
   {
@@ -13,9 +9,9 @@ namespace release.Models
     public string Description { get; set; }
     public int CountImages { get; set; }
     public string Url { get; set; }
-    public string Type { get; set; }
-    public string SubCat { get; set; }
-
+    public string Category { get; set; }
+    public string SubCategory { get; set; }
+    public string Sub_Category { get; set; }
 
     //[ForeignKey("SubProductCategory")]
     //public Guid SubProductCategoryId { get; set; }

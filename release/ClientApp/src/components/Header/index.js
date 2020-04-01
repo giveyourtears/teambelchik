@@ -75,11 +75,11 @@ const Header = () => {
                                     <div className="header_social_icon d-none d-lg-block">
                                         <ul>
                                             <li><a href="https://vk.com/id535800946"><i className="fab fa-vk"></i></a></li>
-                                            <li>
+                                            <li hidden>
                                                 <a href="/twitter"><i className="fab fa-twitter"></i></a>
                                             </li>
                                             <li><a href="https://www.instagram.com/team_belchik/"><i className="fab fa-instagram"></i></a></li>
-                                            <li><a href="/skype"><i className="fab fa-skype"></i></a></li>
+                                            <li hidden><a href="/skype"><i className="fab fa-skype"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>

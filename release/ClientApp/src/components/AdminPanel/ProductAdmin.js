@@ -3,13 +3,19 @@ import Header from "./Header/index";
 import Sidebar from "./Sidebar/index";
 import Logout from "./LogoutModal";
 import Delete from "./DeleteModal/index";
+import { createBrowserHistory } from "history";
 import { Service } from "../../services/Services";
 
 class ProductAdmin extends Component {
   constructor(props) {
     super(props);
     this.state = { products: [] };
-    Service.getProducts().then(resp => this.setState({ products: resp }));
+    let str = createBrowserHistory().location.pathname.split("/");
+    let path = str[str.length - 1];
+    if (path === "") path = str[str.length - 2];
+    Service.getProductsBySubCategory(path).then(response =>
+      this.setState({ products: response, path: path })
+    );
   }
 
   delete = (id) =>{

@@ -12,8 +12,9 @@ namespace release.Data.Repositories.Abstract
     IEnumerable<CallBack> GetAllCallBacks();
     IEnumerable<ProductCategory> GetAllCategory();
     //IEnumerable<SubProductCategory> GetAllSubCategory();
-    IEnumerable<Product> GetProductsByCategory(string type_cat);
-    IEnumerable<Product> GetProductsBySubCategory(string sub_type);
+    IEnumerable<Product> GetProductsByCategory(string category);
+    IEnumerable<Product> GetProductsBySubCategory(string sub_category);
+    IEnumerable<Product> GetProductsBySubSubCategory(string sub_sub_cat);
     IEnumerable<Product> GetProductsHot();
     ProductCategory GetCategory(string cat);
     ProductCategory GetSubCategory(string sub);

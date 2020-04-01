@@ -7,7 +7,7 @@ import { Service } from "../../../../services/Services";
 class AddProduct extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", color: "", size: "", isHot: false, price: "", description: "", additionalInfo: "", url: "", type: "", categoryProduct: [], files: [] };
+    this.state = { name: "", color: "", size: "", price: "", description: "", additionalInfo: "", url: "", subCategory: "", categoryProduct: [], files: [] };
     Service.getAllCategory().then(response =>
       this.setState({ 
         categoryProduct: response 
@@ -62,13 +62,7 @@ class AddProduct extends Component {
 
   onSelectChange = (event) => {
     this.setState({
-      type: event.target.value
-    })
-  }
-
-  onCheckChange = (event) => {
-    this.setState({
-      isHot: !this.state.isHot
+      subCategory: event.target.value
     })
   }
 
@@ -101,7 +95,7 @@ class AddProduct extends Component {
                   <label htmlFor="exampleInputEmail1">Выбор типа продукта</label>
                     <select className="form-control" id="exampleFormControlSelect1" onChange={this.onSelectChange}>
                     {this.state.categoryProduct.map((item, index) => (
-                        <option key={index} defaultValue='dveri' value={item.url}>{item.name}</option>
+                        <option key={index} defaultValue='mezh' value={item.url}>{item.name}</option>
                     ))
                     }
                   </select>
@@ -170,15 +164,6 @@ class AddProduct extends Component {
                     placeholder="Цвет"
                     onChange={this.onColorChange}
                   />
-                </div>
-                <div className="form-check mb-2">
-                  <input type="checkbox" className="form-check-input" id="exampleCheck1" onChange={this.onCheckChange}/>
-                  <label 
-                  className="form-check-label" 
-                  htmlFor="exampleCheck1"
-                  >
-                    Горячий продукт?
-                    </label>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Размер</label>

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using release.Data.Repositories.Abstract;
 using release.Models;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace release.Controllers
 {
@@ -19,13 +19,17 @@ namespace release.Controllers
     {
       _repo = Repository;
     }
-    public IEnumerable<Product> GetProductsByCategory(string type_cat)
+    public IEnumerable<Product> GetProductsByCategory(string category)
     {
-      return _repo.GetProductsByCategory(type_cat);
+      return _repo.GetProductsByCategory(category);
     }
-    public IEnumerable<Product> GetProductsBySubCategory(string type)
+    public IEnumerable<Product> GetProductsBySubCategory(string sub_category)
     {
-      return _repo.GetProductsBySubCategory(type);
+      return _repo.GetProductsBySubCategory(sub_category);
+    }
+    public IEnumerable<Product> GetProductsBySubSubCategory(string sub_sub_cat)
+    {
+      return _repo.GetProductsBySubSubCategory(sub_sub_cat);
     }
     public IEnumerable<Product> GetAllProducts()
     {
@@ -49,10 +53,12 @@ namespace release.Controllers
     }
     public Product GetProduct(string product)
     {
-      try {
+      try
+      {
         return _repo.GetProduct(product);
       }
-      catch(Exception e) {
+      catch (Exception e)
+      {
         Console.WriteLine(e);
         return _repo.GetProduct(product);
       }
@@ -61,7 +67,12 @@ namespace release.Controllers
     [HttpPost]
     public bool Login([FromBody]Login model)
     {
-      if (model.login.Equals("test") && model.password.Equals("test")) return true;
+      try {
+        if (model.login.Equals("test") && model.password.Equals("test")) return true;
+      } catch(Exception e) {
+        Console.WriteLine(e);
+        return false;
+      }
       return false;
     }
 
@@ -82,42 +93,21 @@ namespace release.Controllers
     {
       _repo.DeleteCategory(id);
     }
-  
+
+    [HttpDelete]
+    public void DeleteCallback(string id)
+    {
+      _repo.DeleteCallBack(id);
+    }
+
     [HttpPost]
-    public void UpdateCategory(ProductCategory category) 
+    public void UpdateCategory(ProductCategory category)
     {
       _repo.UpdateCategory(category);
     }
 
     [HttpPut]
     public void AddProduct(IFormCollection data)
-    {
-      var files = data.Files.ToList();
-      var product = JsonConvert.DeserializeObject<Product>(data["product"]);
-      var path = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp", "build", "product", product.Url);
-      if (Directory.Exists(path))
-      {
-        Directory.Delete(path, true);
-      }
-      Directory.CreateDirectory(path);
-      int countOfFiles = 0;
-      for (var i = 0; i < files.Count; i++)
-      {
-        if (files[i].Length > 0) 
-        {
-          using (var stream = new FileStream(path + "/" + product.Url + i + ".jpg", FileMode.Create))
-          {
-            files[i].CopyTo(stream);
-          }
-          countOfFiles++;
-        }
-      }
-      product.CountImages = countOfFiles;
-      _repo.AddProduct(product);
-    }
-
-    [HttpPost]
-    public void UpdateProduct(IFormCollection data)
     {
       var files = data.Files.ToList();
       var product = JsonConvert.DeserializeObject<Product>(data["product"]);
@@ -139,8 +129,39 @@ namespace release.Controllers
           countOfFiles++;
         }
       }
+      Guid new_guid = Guid.NewGuid();
+      product.Id = new_guid;
       product.CountImages = countOfFiles;
-      _repo.UpdateProduct(product);
+      _repo.AddProduct(product);
+    }
+
+    [HttpPost]
+    public void UpdateProduct(IFormCollection data)
+    {
+      var product = JsonConvert.DeserializeObject<Product>(data["product"]);
+      var files = data.Files.ToList();
+      if (files.Count == 0) {
+        _repo.UpdateProduct(product);
+      } else {
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp", "build", "product", product.Url);
+        if (Directory.Exists(path))
+        {
+          Directory.Delete(path, true);
+        }
+        Directory.CreateDirectory(path);
+        int countOfFiles = 0;
+        for (var i = 0; i < files.Count; i++)
+        {
+          if (files[i].Length > 0)
+          {
+            using (var stream = new FileStream(path + "/" + product.Url + i + ".jpg", FileMode.Create))
+            {
+              files[i].CopyTo(stream);
+            }
+            countOfFiles++;
+          }
+        }
+      }
     }
   }
 }
