@@ -16,15 +16,25 @@ const Layout = () => {
       <hr className="sidebar-divider my-0" />
       <div className="sidebar-heading">Магазин</div>
       <li className="nav-item active">
-        <a className="nav-link" href="/productAdmin">
-          <span>Продукты</span>
+        <a className="nav-link" href="/productAdmin/mezh">
+          <span>Межкомнатые</span>
         </a>
       </li>
       <li className="nav-item active">
+        <a className="nav-link" href="/productAdmin/vhodnie">
+          <span>Входные</span>
+        </a>
+      </li>
+      <li className="nav-item active">
+        <a className="nav-link" href="/productAdmin/ruchka">
+          <span>Ручки</span>
+        </a>
+      </li>
+      {/* <li className="nav-item active">
         <a className="nav-link" href="/categoryAdmin">
           <span>Категории</span>
         </a>
-      </li>
+      </li> */}
       <li className="nav-item active">
         <a className="nav-link" href="/aboutAdmin">
           <span>О нас</span>

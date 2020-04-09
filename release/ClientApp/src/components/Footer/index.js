@@ -239,7 +239,6 @@ const Footer = () => {
 // 					<li className="p-b-9" hidden>
 //                     <a href="/twitter" className="fs-18 color1 p-r-20 fab fa-twitter"> Twitter</a>
 // 					</li>
-
 // 					<li className="p-b-9" hidden>
 //                     <a href="/skype" className="fs-18 color1 p-r-20 fab fa-skype"> Skype</a>
 // 					</li>
@@ -270,6 +269,40 @@ const Footer = () => {
 //             </div>
 //         </div>
 // 	</footer> */}
+// 					<li className="p-b-9" hidden>
+//                     <a href="/twitter" className="fs-18 color1 p-r-20 fab fa-twitter"> Twitter</a>
+// 					</li>
+
+// 					<li className="p-b-9" hidden>
+//                     <a href="/skype" className="fs-18 color1 p-r-20 fab fa-skype"> Skype</a>
+// 					</li>
+// 				</ul>
+// 			</div>
+
+// 			<div className="w-size8 p-t-10 p-l-15 p-r-15 respon3">
+//                 <div>
+//                 <a href="/"><img src={logo} alt="" title="" /></a>
+//             </div>
+// 			</div>
+//         </div>
+//         </footer>
+//         <footer className="copyright_part">
+//         <div className="container">
+//             <div className="row align-items-center">
+//                 <p className="footer-text m-0 col-lg-8 col-md-12">
+// Copyright &copy; 2020 All rights reserved</p>
+// <p className="footer-text m-0 col-lg-8 col-md-12" style={{fontSize: "15px", marginLeft: "15px !important"}}>
+//    Нужен новый сайт? Пишите сюда <a href="https://vk.com/giveyourtears">@giv</a></p>
+
+//                 <div className="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+//                     <a href="https://vk.com/id535800946"><i className="fab fa-vk"></i></a>
+//                     <a href="/twitter" hidden> <i className="fab fa-twitter"></i> </a>
+//                     <a href="https://www.instagram.com/team_belchik/"><i className="fab fa-instagram"></i></a>
+//                     <a href="/skype" hidden><i className="fab fa-skype"></i></a>
+//                 </div>
+//             </div>
+//         </div>
+//     </footer></div>
     );
 };
 

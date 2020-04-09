@@ -201,6 +201,12 @@ function deleteCallback(id) {
   );
 }
 
+function deleteCallback(id) {
+  return fetch("https://teambelchik.by/api/product/deletecallback?id=" + id, {method: 'DELETE'}).then(
+    handleResponse
+  );
+}
+
 function handleResponse(response) {
     return response.text().then(text => {
       const data = text && JSON.parse(text);

@@ -72,7 +72,7 @@ export const adminRoutes = [
     },
     {
         component: ProductAdmin,
-        path: '/productAdmin'
+        path: '/productAdmin/*'
     },
     {
         component: EditAbout,

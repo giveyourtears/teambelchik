@@ -129,6 +129,8 @@ namespace release.Controllers
           countOfFiles++;
         }
       }
+      Guid new_guid = Guid.NewGuid();
+      product.Id = new_guid;
       product.CountImages = countOfFiles;
       _repo.AddProduct(product);
     }
@@ -136,28 +138,30 @@ namespace release.Controllers
     [HttpPost]
     public void UpdateProduct(IFormCollection data)
     {
-      var files = data.Files.ToList();
       var product = JsonConvert.DeserializeObject<Product>(data["product"]);
-      var path = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp", "build", "product", product.Url);
-      if (Directory.Exists(path))
-      {
-        Directory.Delete(path, true);
-      }
-      Directory.CreateDirectory(path);
-      int countOfFiles = 0;
-      for (var i = 0; i < files.Count; i++)
-      {
-        if (files[i].Length > 0)
+      var files = data.Files.ToList();
+      if (files.Count == 0) {
+        _repo.UpdateProduct(product);
+      } else {
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp", "build", "product", product.Url);
+        if (Directory.Exists(path))
         {
-          using (var stream = new FileStream(path + "/" + product.Url + i + ".jpg", FileMode.Create))
+          Directory.Delete(path, true);
+        }
+        Directory.CreateDirectory(path);
+        int countOfFiles = 0;
+        for (var i = 0; i < files.Count; i++)
+        {
+          if (files[i].Length > 0)
           {
-            files[i].CopyTo(stream);
+            using (var stream = new FileStream(path + "/" + product.Url + i + ".jpg", FileMode.Create))
+            {
+              files[i].CopyTo(stream);
+            }
+            countOfFiles++;
           }
-          countOfFiles++;
         }
       }
-      product.CountImages = countOfFiles;
-      _repo.UpdateProduct(product);
     }
   }
 }
