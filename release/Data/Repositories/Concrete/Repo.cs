@@ -1,10 +1,8 @@
-﻿using Newtonsoft.Json;
-using release.Data.Repositories.Abstract;
+﻿using release.Data.Repositories.Abstract;
 using release.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 
 namespace release.Data.Repositories.Concrete
@@ -63,17 +61,17 @@ namespace release.Data.Repositories.Concrete
       _ctx.Add(category);
       _ctx.SaveChanges();
     }
-    
-    public void DeleteCategory(string id) 
+
+    public void DeleteCategory(string id)
     {
       var category = _ctx.ProductCategories.FirstOrDefault(t => t.Id == Guid.Parse(id));
       _ctx.Remove(category);
       _ctx.SaveChanges();
     }
-    public void UpdateCategory(ProductCategory category) 
+    public void UpdateCategory(ProductCategory category)
     {
       var oldCategory = _ctx.ProductCategories.FirstOrDefault(t => t.Id == category.Id);
-      if (oldCategory != null) 
+      if (oldCategory != null)
       {
         oldCategory.Name = category.Name;
         oldCategory.Url = category.Url;
@@ -88,15 +86,20 @@ namespace release.Data.Repositories.Concrete
 
     public void AddCallBack(CallBack callBack)
     {
-        _ctx.Add(callBack);
-        _ctx.SaveChanges();
+      _ctx.Add(callBack);
+      _ctx.SaveChanges();
     }
 
     public void DeleteCallBack(string id)
     {
-      var callback = _ctx.CallBacks.FirstOrDefault(t => t.Id == Guid.Parse(id));
-      _ctx.Remove(callback);
-      _ctx.SaveChanges();
+      try {
+        var callback = _ctx.CallBacks.FirstOrDefault(t => t.Id == Guid.Parse(id));
+        _ctx.Remove(callback);
+        _ctx.SaveChanges();
+      } catch(Exception e) {
+        Console.WriteLine(e);
+      }
+      
     }
 
     public void DeleteProduct(string id)
@@ -121,21 +124,37 @@ namespace release.Data.Repositories.Concrete
       _ctx.SaveChanges();
     }
     private IEnumerable<Product> products => _ctx.Products.ToList();
-    public IEnumerable<Product> GetProductsByCategory(string type_cat)
+
+    public IEnumerable<Product> GetProductsByCategory(string category)
     {
-      var result = products.Where(c => c.Type == type_cat);
+      var result = products.Where(c => c.Category == category);
       return result;
     }
 
-    public IEnumerable<Product> GetProductsBySubCategory(string type_sub_cat)
+    public IEnumerable<Product> GetProductsBySubCategory(string sub_category)
     {
-      var result = products.Where(c => c.SubCat == type_sub_cat);
+
+      try
+      {
+        var result = products.Where(c => c.SubCategory == sub_category);
+        return result;
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine("error" + e);
+      }
+      return products;
+    }
+
+    public IEnumerable<Product> GetProductsBySubSubCategory(string sub_sub_cat)
+    {
+      var result = products.Where(c => c.Sub_Category == sub_sub_cat);
       return result;
     }
 
     public IEnumerable<CallBack> GetAllCallBacks()
     {
-      var result = _ctx.CallBacks;
+      var result = _ctx.CallBacks.OrderByDescending(call => call.DateNow);
       return result;
     }
     public IEnumerable<Product> GetAllProducts()

@@ -12,6 +12,7 @@ import EditProduct from "../components/AdminPanel/Edit/EditProduct";
 import CategoryAdmin from "../components/AdminPanel/ProductCategory";
 import AddCategory from "../components/AdminPanel/Add/AddCategory";
 import EditCategory from "../components/AdminPanel/Edit/EditCategory";
+import CallBackPage from "../components/CallBackPage";
 
 export const routes = [
     {
@@ -21,6 +22,10 @@ export const routes = [
     {
         component: Contacts,
         path: '/Contacts'
+    },
+    {
+        component: CallBackPage,
+        path: '/M3NadyaM3'
     },
     {
         component: About,

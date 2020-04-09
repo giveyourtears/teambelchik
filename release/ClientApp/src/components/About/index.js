@@ -25,9 +25,9 @@ class About extends Component {
 	</section>
       <div className="container-fluid" id="aboutSection">
         
-        <header className="section-header">
+        <header className="section-header" style={{display: "flex", flexDirection: "column"}}>
           <h3>Почему нужно выбрать именно нас?</h3>
-          <p>{this.state.about.description}</p>
+          <p style={{paddingBottom: "20px", fontSize: "20px"}}>{this.state.about.description}</p>
         </header>
 
         <div className="row">
@@ -40,7 +40,7 @@ class About extends Component {
           <div className="col-lg-6">
             <div className="why-us-content">
               <div className="features wow bounceInUp clearfix">
-              <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
                 <h4>Качество</h4>
                 <p>{this.state.about.qualityDescription}</p>
               </div>

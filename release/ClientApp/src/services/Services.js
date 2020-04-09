@@ -6,6 +6,7 @@ export const Service = {
     getProduct,
     getProductsByCategory,
     getProductsBySubCategory,
+    getProductsBySubSubCategory,
     updateProduct,
     deleteProduct,
     getCategory,
@@ -16,7 +17,9 @@ export const Service = {
     addCategory,
     deleteCategory,
     updateCategory,
-    addCallback
+    addCallback, 
+    getAllCallbacks,
+    deleteCallback
 }
 
 let now_date = Date.now();
@@ -74,6 +77,12 @@ function getAbout() {
     );
 }
 
+function getAllCallbacks() {
+  return fetch("https://teambelchik.by/api/callback/getcallbacks", {cache: 'no-store'}).then(
+      handleResponse
+  );
+}
+
 function updateAbout(about) {
     return fetch("https://teambelchik.by/api/about/updateabout", 
     {
@@ -123,13 +132,18 @@ function Login(login, password) {
 
 function getProductsByCategory(pathName) {
   return fetch(
-    `https://teambelchik.by/api/product/getProductsByCategory?type_cat=${pathName}&date=${now_date}`, {cache: 'no-store'}
+    `https://teambelchik.by/api/product/getProductsByCategory?category=${pathName}&date=${now_date}`, {cache: 'no-store'}
   ).then(handleResponse);
 }
 
 
 function getProductsBySubCategory(pathName) {
-  return fetch(`https://teambelchik.by/api/product/getProductsBySubCategory?type=${pathName}&date=${now_date}`, {cache: 'no-store'}
+  return fetch(`https://teambelchik.by/api/product/getProductsBySubCategory?sub_category=${pathName}&date=${now_date}`, {cache: 'no-store'}
+  ).then(handleResponse);
+}
+
+function getProductsBySubSubCategory(pathName) {
+  return fetch(`https://teambelchik.by/api/product/getProductsBySubSubCategory?sub_sub_cat=${pathName}&date=${now_date}`, {cache: 'no-store'}
   ).then(handleResponse);
 }
 
@@ -177,6 +191,12 @@ function deleteProduct(id) {
 
 function deleteCategory(id) {
   return fetch("https://teambelchik.by/api/product/deletecategory?id=" + id, {method: 'DELETE'}).then(
+    handleResponse
+  );
+}
+
+function deleteCallback(id) {
+  return fetch("https://teambelchik.by/api/product/deletecallback?id=" + id, {method: 'DELETE'}).then(
     handleResponse
   );
 }

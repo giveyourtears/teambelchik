@@ -10,8 +10,8 @@ using release;
 namespace release.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200115201616_migration")]
-    partial class migration
+    [Migration("20200329094705_date_column")]
+    partial class date_column
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -246,6 +246,9 @@ namespace release.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("DateNow")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -286,6 +289,9 @@ namespace release.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");
 
@@ -304,10 +310,10 @@ namespace release.Migrations
                     b.Property<string>("Size")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SubCat")
+                    b.Property<string>("SubCategory")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Type")
+                    b.Property<string>("Sub_Category")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
