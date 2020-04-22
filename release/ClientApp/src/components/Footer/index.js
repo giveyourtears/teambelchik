@@ -60,21 +60,26 @@ const Footer = () => {
 						</div>
 						<div class="col-12 col-md-12 col-lg-4 ">
 							<div class="footer_main_title py-3"> Мы сотрудничаем:</div>
-							<a href=" " class="footer_img_post_6"><img src={fun} alt="img"/></a>
-							<a href="" class="footer_img_post_6"><img src={halva} alt="img"/></a>
-							<a href="" class="footer_img_post_6"><img src={belagro} alt="img"/></a>
-							<a href="#" class="footer_img_post_6"><img src={belarus} alt="img"/></a>
-							<a href="#" class="footer_img_post_6"><img src={pokupok} alt="img"/></a>
-							<a href="#" class="footer_img_post_6"><img src={magnit} alt="img"/></a>
+							<a href="https://www.bps-sberbank.by/kartafun" class="footer_img_post_6"><img src={fun} alt="img"/></a>
+							<a href="https://www.halva.by/halva/" class="footer_img_post_6"><img src={halva} alt="img"/></a>
+							<a href="https://www.belapb.by/natural/credits/legkie-pokupki/" class="footer_img_post_6"><img src={belagro} alt="img"/></a>
+							<a href="https://belarusbank.by/ru/fizicheskim_licam/kredit/consumer/28985/32257" class="footer_img_post_6"><img src={belarus} alt="img"/></a>
+							<a href="https://kartapokupok.by/ru/" class="footer_img_post_6"><img src={pokupok} alt="img"/></a>
+							<a href="https://magnit.belarusbank.by" class="footer_img_post_6"><img src={magnit} alt="img"/></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="container-fluid fh5co_footer_right_reserved">
 				<div class="container">
-					<div class="row  ">
-						<div class="col-12 col-md-6 py-4 Reserved" style={{display: "flex", flexDirection: "column"}}> <div>© Copyright 2020, All rights reserved.</div><div>Нужен новый сайт? Пишите сюда <a href="https://vk.com/giveyourtears" style={{color: "#ff8b23"}}>@giv</a>. </div></div>
-							<div class="col-12 col-md-6 spdp_right py-4">
+					<div class="row">
+						<div class="col-12 col-md-8 py-4 Reserved" style={{display: "flex", flexDirection: "column"}}> 
+							<div>© Copyright 2020, All rights reserved. Цены и информация, представленные на данном сайте, приведены в ознакомительных целях, не являются публичной офертой и могут быть изменены.</div>
+							<div>
+								Нужен новый сайт? Пишите сюда <a href="https://vk.com/giveyourtears" style={{color: "#ff8b23"}}>@giv</a>. 
+							</div>
+						</div>
+							<div class="col-12 col-md-4 spdp_right py-4">
 								<a href="/" class="footer_last_part_menu">Главная</a>
 								<a href="/about" class="footer_last_part_menu">О нас</a>
 								<a href="/contacts" class="footer_last_part_menu">Контакты</a>

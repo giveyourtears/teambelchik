@@ -19,7 +19,8 @@ export const Service = {
     updateCategory,
     addCallback, 
     getAllCallbacks,
-    deleteCallback
+    deleteCallback,
+    getProductsHot
 }
 
 let now_date = Date.now();
@@ -153,6 +154,12 @@ function getProducts() {
   );
 }
 
+function getProductsHot() {
+  return fetch(`https://teambelchik.by/api/product/getProductsHot?date=${now_date}`, {cache: 'no-store'}).then(
+    handleResponse
+  );
+}
+
 function getProduct(pathName) {
     return fetch(
       "https://teambelchik.by/api/product/getproduct?product=" + pathName, {cache: 'no-store'}
@@ -191,12 +198,6 @@ function deleteProduct(id) {
 
 function deleteCategory(id) {
   return fetch("https://teambelchik.by/api/product/deletecategory?id=" + id, {method: 'DELETE'}).then(
-    handleResponse
-  );
-}
-
-function deleteCallback(id) {
-  return fetch("https://teambelchik.by/api/product/deletecallback?id=" + id, {method: 'DELETE'}).then(
     handleResponse
   );
 }

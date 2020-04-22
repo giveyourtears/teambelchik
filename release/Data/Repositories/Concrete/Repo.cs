@@ -169,8 +169,7 @@ namespace release.Data.Repositories.Concrete
     //}
     public IEnumerable<Product> GetProductsHot()
     {
-      //var products = _ctx.Products.Where(c => c.IsHot == true).ToList();
-      var products = _ctx.Products.ToList();
+      var products = _ctx.Products.Where(c => c.Is_Hot == 1).ToList();
       return products;
     }
     private IEnumerable<ProductCategory> categories => _ctx.ProductCategories.ToList();

@@ -8,6 +8,7 @@
     public string Price { get; set; }
     public string Description { get; set; }
     public int CountImages { get; set; }
+    public int Is_Hot { get; set; }
     public string Url { get; set; }
     public string Category { get; set; }
     public string SubCategory { get; set; }
