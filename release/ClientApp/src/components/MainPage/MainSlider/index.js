@@ -3,7 +3,7 @@ import "./style.css";
 import Background1 from '../../../assets/1.jpg';
 import Background2 from '../../../assets/2.jpg';
 import Background3 from '../../../assets/3.jpg';
-import Background4 from '../../../assets/4.jpg';
+// import Background4 from '../../../assets/4.jpg';
 import Background5 from '../../../assets/5.jpg';
 import Background6 from '../../../assets/6.jpg';
 import Background7 from '../../../assets/7.jpg';
@@ -17,9 +17,9 @@ import Background8 from '../../../assets/8.jpg';
   var divStyle3 = {
     backgroundImage: `url(${Background3})`
   };
-  var divStyle4 = {
-    backgroundImage: `url(${Background4})`
-  };
+  // var divStyle4 = {
+  //   backgroundImage: `url(${Background4})`
+  // };
   var divStyle5 = {
     backgroundImage: `url(${Background5})`
   };

@@ -11,9 +11,6 @@ import f7 from '../../../assets/17.jpg';
 import f8 from '../../../assets/18.jpg';
 
 class GallerySlider extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <section id="articles" className="text-center py-5">

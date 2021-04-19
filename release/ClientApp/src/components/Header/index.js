@@ -1,12 +1,6 @@
 import React from "react"; 
 import './style.css'; 
-import logo from '../../assets/5pereved.png'; 
-import halva from '../../assets/halva.jpg'; 
-import belarus from '../../assets/belarusbank.png'; 
-import belagro from '../../assets/belagro.jpg'; 
-import fun from '../../assets/fun.jpg'; 
-import pokupok from '../../assets/pokupok.jpg'; 
-import magnit from '../../assets/magnit.png'; 
+import logo from '../../assets/logo.png';
 
 class Header extends React.Component { 
     constructor (props) { 
@@ -55,7 +49,7 @@ class Header extends React.Component {
         <div className="container-fluid">
                 <div className="row" style={{display: "flex", justifyContent: "space-around"}}>
                     <div className="fh5co_padding_menu">
-                        <a href="/"><img src={logo} alt="img" className="fh5co_logo_width" /></a>
+                        <a href="/"><img src={logo} style={{height: "130px"}}></img></a>
                     </div>
                     <nav className="navbar navbar-expand-lg navbar-light">
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,14 +65,14 @@ class Header extends React.Component {
                                                             Каталог
                                                         </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a className="dropdown-item" href="/category/mezh">Межкомнатные двери</a>
+                                        <a className="dropdown-item" href="/category/mezhkomnatnie">Межкомнатные двери</a>
                                         <a className="dropdown-item" href="/category/vhodnie">Входные двери</a>
-                                        <div className="dropdown-divider"></div>
-                                        <a className="dropdown-item" href="/category/okna">Окна</a>
-                                        <a className="dropdown-item" href="/category/furnitura">Фурнитура</a> {/*
-                                        <a className="dropdown-item" href="/category/oboi">Жидкие обои</a>
-                                        <a className="dropdown-item" href="/category/potolki">Натяжные потолки</a>
-                                        <a className="dropdown-item" href="/category/napol">Напольные покрытия</a>*/}
+                                        {/*<div className="dropdown-divider"></div>*/}
+                                        {/*<a className="dropdown-item" href="/category/okna">Окна</a>*/}
+                                        {/*<a className="dropdown-item" href="/category/furnitura">Фурнитура</a> /!**/}
+                                        {/*<a className="dropdown-item" href="/category/oboi">Жидкие обои</a>*/}
+                                        {/*<a className="dropdown-item" href="/category/potolki">Натяжные потолки</a>*/}
+                                        {/*<a className="dropdown-item" href="/category/napol">Напольные покрытия</a>*!/*/}
                                     </div>
                                 </li>
                                 <li className="nav-item">
@@ -97,7 +91,7 @@ class Header extends React.Component {
                             </a>
                         </div>
                         <div className="text-center d-inline-block">
-                            <a href="https://instagram.com/team_belchik" target="_blank" className="fh5co_display_table">
+                            <a href="https://instagram.com/team_belchik" className="fh5co_display_table">
                                 <div className="fh5co_verticle_middle"><i className="fa fab fa-instagram"></i></div>
                             </a>
                         </div>

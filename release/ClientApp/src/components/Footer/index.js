@@ -1,6 +1,6 @@
 import React from "react";
 import './style.css';
-import logo from '../../assets/5pereved (1).png';
+import logo from '../../assets/logo2.png';
 import footer from '../../assets/footer_sub_tipik.png';
 import halva from '../../assets/halva.jpg'; 
 import belarus from '../../assets/belarusbank.png'; 
@@ -16,73 +16,74 @@ const Footer = () => {
 	let year = dateObj.getUTCFullYear(); 
     return (
 		<div>
-			<div class="container-fluid fh5co_footer_bg pb-3">
-				<div class="container animate-box fadeInUp animated-fast">
-					<div class="row">
-						<div class="col-12 spdp_right py-5">{/*<img src={logo} alt="img" class="footer_logo"/>*/}</div>
-						<div class="clearfix"></div>
-						<div class="col-12 col-md-4 col-lg-3">
-							<div class="footer_main_title py-3"> О нас</div>
-							<div class="footer_sub_about pb-3">
+			<div className="container-fluid fh5co_footer_bg pb-3">
+				<div className="container animate-box fadeInUp animated-fast">
+					<div className="row">
+						{/*<div className="col-12 spdp_right py-5"><img src={logo} alt="img" className="footer_logo"/>*/}
+						{/*</div>*/}
+						<div className="clearfix"></div>
+						<div className="col-12 col-md-4 col-lg-3">
+							<div className="footer_main_title py-3"> О нас</div>
+							<div className="footer_sub_about pb-3">
 								У нас вы можете найти лучшие двери по хорошим ценам. 
 								От нас вы получите только хорошие эмоции, а самое главное наша продукция качественная и прослужит долгие годы.
 							</div>
-							<div class="footer_mediya_icon">
-								<div class="text-center d-inline-block"><a href="https://vk.com/id535800946" class="fh5co_display_table_footer">
-									<div class="fh5co_verticle_middle"><i class="fa fab fa-vk"></i></div>
+							<div className="footer_mediya_icon">
+								<div className="text-center d-inline-block"><a href="https://vk.com/id535800946" className="fh5co_display_table_footer">
+									<div className="fh5co_verticle_middle"><i className="fa fab fa-vk"></i></div>
 								</a></div>
-								<div class="text-center d-inline-block"><a href="mailto:sergeibelchikvtb@gmail.com" class="fh5co_display_table_footer">
-									<div class="fh5co_verticle_middle"><i class="fa fa-google-plus"></i></div>
+								<div className="text-center d-inline-block"><a href="mailto:sergeibelchikvtb@gmail.com" className="fh5co_display_table_footer">
+									<div className="fh5co_verticle_middle"><i className="fa fa-google-plus"></i></div>
 								</a></div>
-								<div class="text-center d-inline-block"><a href="https://instagram.com/team_belchik" class="fh5co_display_table_footer">
-									<div class="fh5co_verticle_middle"><i class="fa fab fa-instagram"></i></div>
+								<div className="text-center d-inline-block"><a href="https://instagram.com/team_belchik" className="fh5co_display_table_footer">
+									<div className="fh5co_verticle_middle"><i className="fa fab fa-instagram"></i></div>
 								</a></div>
 							</div>
 						</div>
-						<div class="col-12 col-md-3 col-lg-2">
-							<div class="footer_main_title py-3"> Категории</div>
-							<ul class="footer_menu">
-								<li><a href="/category/mezh" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Межкомнатые</a></li>
-								<li><a href="/category/vhodnie" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Входные</a></li>
-								<li><a href="/category/furnitura" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Фурнитура</a></li>
-								<li><a href="/category/okna" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Окна</a></li>
+						<div className="col-12 col-md-3 col-lg-2">
+							<div className="footer_main_title py-3"> Категории</div>
+							<ul className="footer_menu">
+								<li><a href="/category/mezhkomnatnie" className=""><i className="fa fa-angle-right"/>&nbsp;&nbsp; Межкомнатые</a></li>
+								{/*<li><a href="/category/vhodnie" className=""><i className="fa fa-angle-right"/>&nbsp;&nbsp; Входные</a></li>*/}
+								{/*<li><a href="/category/furnitura" className=""><i className="fa fa-angle-right"/>&nbsp;&nbsp; Фурнитура</a></li>*/}
+								{/*<li><a href="/category/okna" className=""><i className="fa fa-angle-right"/>&nbsp;&nbsp; Окна</a></li>*/}
 							</ul>
 						</div>
-						<div class="col-12 col-md-5 col-lg-3 position_footer_relative">
-							<div class="footer_main_title py-3"> Наши плюсы!</div>
-							<div class="footer_makes_sub_font"> {`${day}/${month}/${year}`}</div>
-							<p class="footer_post pb-4" style={{fontSize: "15px"}}> Самые лучшие цены в городе </p>
-							<div class="footer_makes_sub_font"> {`${day-1}/${month}/${year}`}</div>
-							<p class="footer_post pb-4" style={{fontSize: "15px"}}> Только у нас: бесплатный замер и доставка! </p>
-							<div class="footer_makes_sub_font"> {`${day-2}/${month}/${year}`}</div>
-							<p class="footer_post pb-4" style={{fontSize: "15px"}}> Профессиональный монтаж </p>
-							<div class="footer_position_absolute"><img src={footer} alt="img" class="width_footer_sub_img"/></div>
+						<div className="col-12 col-md-5 col-lg-3 position_footer_relative">
+							<div className="footer_main_title py-3"> Наши плюсы!</div>
+							<div className="footer_makes_sub_font"> {`${day}/${month}/${year}`}</div>
+							<p className="footer_post pb-4" style={{fontSize: "15px"}}> Самые лучшие цены в городе </p>
+							<div className="footer_makes_sub_font"> {`${day-1}/${month}/${year}`}</div>
+							<p className="footer_post pb-4" style={{fontSize: "15px"}}> Только у нас: бесплатный замер и доставка! </p>
+							<div className="footer_makes_sub_font"> {`${day-2}/${month}/${year}`}</div>
+							<p className="footer_post pb-4" style={{fontSize: "15px"}}> Профессиональный монтаж </p>
+							<div className="footer_position_absolute"><img src={footer} alt="img" className="width_footer_sub_img"/></div>
 						</div>
-						<div class="col-12 col-md-12 col-lg-4 ">
-							<div class="footer_main_title py-3"> Мы сотрудничаем:</div>
-							<a href="https://www.bps-sberbank.by/kartafun" class="footer_img_post_6"><img src={fun} alt="img"/></a>
-							<a href="https://www.halva.by/halva/" class="footer_img_post_6"><img src={halva} alt="img"/></a>
-							<a href="https://www.belapb.by/natural/credits/legkie-pokupki/" class="footer_img_post_6"><img src={belagro} alt="img"/></a>
-							<a href="https://belarusbank.by/ru/fizicheskim_licam/kredit/consumer/28985/32257" class="footer_img_post_6"><img src={belarus} alt="img"/></a>
-							<a href="https://kartapokupok.by/ru/" class="footer_img_post_6"><img src={pokupok} alt="img"/></a>
-							<a href="https://magnit.belarusbank.by" class="footer_img_post_6"><img src={magnit} alt="img"/></a>
+						<div className="col-12 col-md-12 col-lg-4 ">
+							<div className="footer_main_title py-3"> Мы сотрудничаем:</div>
+							<a href="https://www.bps-sberbank.by/kartafun" className="footer_img_post_6"><img src={fun} alt="img"/></a>
+							<a href="https://www.halva.by/halva/" className="footer_img_post_6"><img src={halva} alt="img"/></a>
+							<a href="https://www.belapb.by/natural/credits/legkie-pokupki/" className="footer_img_post_6"><img src={belagro} alt="img"/></a>
+							<a href="https://belarusbank.by/ru/fizicheskim_licam/kredit/consumer/28985/32257" className="footer_img_post_6"><img src={belarus} alt="img"/></a>
+							<a href="https://kartapokupok.by/ru/" className="footer_img_post_6"><img src={pokupok} alt="img"/></a>
+							<a href="https://magnit.belarusbank.by" className="footer_img_post_6"><img src={magnit} alt="img"/></a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="container-fluid fh5co_footer_right_reserved">
-				<div class="container">
-					<div class="row">
-						<div class="col-12 col-md-8 py-4 Reserved" style={{display: "flex", flexDirection: "column"}}> 
-							<div>© Copyright 2020, All rights reserved. Цены и информация, представленные на данном сайте, приведены в ознакомительных целях, не являются публичной офертой и могут быть изменены.</div>
+			<div className="container-fluid fh5co_footer_right_reserved">
+				<div className="container">
+					<div className="row">
+						<div className="col-12 col-md-8 py-4 Reserved" style={{display: "flex", flexDirection: "column"}}> 
+							<div style={{fontSize: "14px"}}>© Copyright 2020, All rights reserved. УНП: 391733010. Цены и информация, представленные на данном сайте, приведены в ознакомительных целях, не являются публичной офертой и могут быть изменены.</div>
 							<div>
-								Нужен новый сайт? Пишите сюда <a href="https://vk.com/giveyourtears" style={{color: "#ff8b23"}}>@giv</a>. 
+								Нужен новый сайт? Пишите сюда <a href="https://vk.com/giveyourtears" style={{color: "#5dd95d"}}>@giv</a>. 
 							</div>
 						</div>
-							<div class="col-12 col-md-4 spdp_right py-4">
-								<a href="/" class="footer_last_part_menu">Главная</a>
-								<a href="/about" class="footer_last_part_menu">О нас</a>
-								<a href="/contacts" class="footer_last_part_menu">Контакты</a>
+							<div className="col-12 col-md-4 spdp_right py-4">
+								<a href="/" className="footer_last_part_menu">Главная</a>
+								<a href="/about" className="footer_last_part_menu">О нас</a>
+								<a href="/contacts" className="footer_last_part_menu">Контакты</a>
 							</div>
 					</div>
 				</div>

@@ -13,7 +13,6 @@ class About extends Component {
     super(props);
     this.state = { about: [] };
     Service.getAbout().then(resp => this.setState({ about: resp }));
-    console.log(this.state.about)
   }
   render() {
     return (

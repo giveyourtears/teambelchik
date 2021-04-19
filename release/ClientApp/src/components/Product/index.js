@@ -25,21 +25,21 @@ class Product extends Component {
     const isNullProduct = this.state;
     var items = [];
     var itemsSecond = []
-		for(var i = 0; i < this.state.countImages; i++) {
+		for(let i = 0; i < this.state.countImages; i++) {
 			items.push(
 				<div key={i}>
-        <img src={`/product/${this.state.url}/${this.state.url}${i}.jpg`}/>
+        <img src={`/product/${this.state.url}/${this.state.url}${i}.jpg`}  alt={"image_items"+i}/>
 				</div>)
     }
-    for(var i = 0; i < this.state.countImages; i++) {
+    for(let i = 0; i < this.state.countImages; i++) {
 			itemsSecond.push(
 				<div key={i}>
-        <img src={`/product/${this.state.url}/${this.state.url}${i}.jpg`}/>
+        <img src={`/product/${this.state.url}/${this.state.url}${i}.jpg`} alt={"image_itemss"+i}/>
 				</div>)
     }
 	  return (
       <div class="maincontent bg--white pt--80 pb--55">
-        {this.state.type == "okna" ? 
+        {this.state.type === "okna" ? 
         <div class="container">
             <div class="row" style={{display: "flex", justifyContent: "center"}}>
                 <div class="col-lg-12 col-12">
@@ -101,7 +101,7 @@ class Product extends Component {
                 </div>
             </div>
         </div>
-        : isNullProduct == 0 ? <img src={image} alt="no_product"></img>:
+        : isNullProduct === 0 ? <img src={image} alt="no_product"></img>:
         <div class="container">
             <div class="row" style={{display: "flex", justifyContent: "center"}}>
                 <div class="col-lg-10 col-12">

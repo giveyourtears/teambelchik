@@ -39,7 +39,7 @@ ul.menu .list span {
   box-sizing: border-box;
 }
 ul.menu .list span:hover {
-  background-color: #F79C51;
+  background-color: #5dd95d;
   transition: 300ms all;
   color: #FFF;
 }
@@ -51,7 +51,7 @@ ul.menu .list .items span {
   padding: 17px 0px 17px 35px;
 }
 ul.menu .list .items span:hover {
-  background-color: rgb(252, 169, 101);
+  background-color: #5dd95d;
   color: #FFF;
   transition: 300ms all;
 }

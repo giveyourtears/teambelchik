@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace release.Controllers
 {
@@ -65,10 +66,10 @@ namespace release.Controllers
     }
 
     [HttpPost]
-    public bool Login([FromBody]Login model)
+    public bool Login(Login model)
     {
       try {
-        if (model.login.Equals("test") && model.password.Equals("test")) return true;
+        if (model.LoginName.Equals("test") && model.Password.Equals("test")) return true;
       } catch(Exception e) {
         Console.WriteLine(e);
         return false;

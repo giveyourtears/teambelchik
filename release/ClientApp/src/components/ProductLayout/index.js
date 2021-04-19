@@ -21,8 +21,8 @@ class ProductLayout extends Component {
       this.state.keywords = "фурнитура для дверей, фурнитура для межкомнатных дверей, фурнитура Витебск"
       this.state.description = "Купить фурнитуру для межкомнатных дверей по цене производителя в Витебске. Широкий ассортимент!"
     }
-    if (path === "mezh" || path === "vhodnie") {
-      if(path === "mezh") {
+    if (path === "mezhkomnatnie" || path === "vhodnie") {
+      if(path === "mezhkomnatnie") {
         this.state.category = "Межкомнатые двери"
         this.state.title = "Межкомнатные двери в Витебске - купить межкомнатные двери в Витебске. Доставка и замер бесплатно!"
         this.state.keywords = "купить межкомнатные двери, межкомнатные двери в Витебске, межкомнатные двери"
@@ -69,7 +69,7 @@ class ProductLayout extends Component {
 				</div>
 				<div className="new-arrivals-content">
         <div className="row justify-content-center">
-        {this.state.category["url"]=="okna" ? 
+        {this.state.category["url"]==="okna" ? 
         this.state.products.map((item,index) => (
           <a href={`/product/${item.url}`} className="product-item" data-id="842" key={index}>
           <div className="product-item-wrapper">
