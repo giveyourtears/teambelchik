@@ -103,7 +103,9 @@ class MainCatalogue extends Component {
                                         <ul className="items">
                                             <li onClick={() => this.onClickCatCatCat("standart")}> <span>Стандарт</span></li>
                                             <li onClick={() => this.onClickCatCatCat("porta")}> <span>Порта</span></li>
-                                            {/*<li onClick={() => this.onClickCatCatCat("legno")}> <span>Легно</span></li>*/}
+                                            <li onClick={() => this.onClickCatCatCat("classico")}> <span>Классико</span></li>
+                                            <li onClick={() => this.onClickCatCatCat("vetro")}> <span>Ветро</span></li>
+                                            <li onClick={() => this.onClickCatCatCat("standart")}> <span>Стандарт</span></li>
                                             <li onClick={() => this.onClickCatCatCat("skinny")}> <span>Скинни</span></li>
                                             <li onClick={() => this.onClickCatCatCat("bona")}> <span>Бона</span></li>
                                             <li onClick={() => this.onClickCatCatCat("vega")}> <span>Вега</span></li>
